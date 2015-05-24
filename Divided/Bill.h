@@ -2,7 +2,6 @@
 //  Bill.h
 //  Divided
 //
-//  Created by Jo on 10/04/2015.
 //  Copyright (c) 2015 Jo. All rights reserved.
 //
 
@@ -13,6 +12,9 @@
 
 @property (nonatomic, strong) NSString *billID;
 @property (nonatomic, strong) NSString *billName;
-
+@property (nonatomic, strong) NSDecimalNumber *billAmount;
+@property (nonatomic, strong) NSString *billType;
+@property (nonatomic, strong) NSString *paidBy;
+@property (nonatomic, strong) NSString *groupName;
 
 @end

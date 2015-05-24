@@ -7,17 +7,15 @@
 //
 
 #import "AppDelegate.h"
-#import <Parse/Parse.h>
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Parse enableLocalDatastore];
+ /*   [Parse enableLocalDatastore];
     
     // Initialize Parse.
     [Parse setApplicationId:@"f4AkTwMlaHwSJpoDRjBPsCjE2nEancXRMfybhsFL"
-                  clientKey:@"BfyYNurCtew7cPSdufFve6yCRfRjbLr79hbSn6E1"];
+                  clientKey:@"BfyYNurCtew7cPSdufFve6yCRfRjbLr79hbSn6E1"];*/
     
     return YES;
 }

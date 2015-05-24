@@ -2,7 +2,6 @@
 //  SignupViewController.h
 //  Divided
 //
-//  Created by Jo on 18/03/2015.
 //  Copyright (c) 2015 Jo. All rights reserved.
 //
 

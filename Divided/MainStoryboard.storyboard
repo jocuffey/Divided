@@ -23,7 +23,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hzz-XY-k4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4" y="-28"/>
+            <point key="canvasLocation" x="162" y="43"/>
         </scene>
         <!--Divided-->
         <scene sceneID="tFR-KC-KaK">
@@ -93,11 +93,11 @@
             <objects>
                 <tableViewController id="klk-Nj-oi4" customClass="GroupsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qoe-RC-r8b">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BasicCell" id="gWr-aF-RFc">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BasicCell" id="gWr-aF-RFc">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gWr-aF-RFc" id="UHr-s8-TXj">
@@ -111,17 +111,55 @@
                             <outlet property="delegate" destination="klk-Nj-oi4" id="M2z-Ub-mac"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Groups" id="FT9-xI-9gh">
-                        <barButtonItem key="rightBarButtonItem" title="Add Group" id="2b7-Gi-LZm">
-                            <connections>
-                                <segue destination="gzi-xi-kPr" kind="push" id="Eh5-Vl-Dou"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Groups" id="FT9-xI-9gh"/>
+                    <connections>
+                        <segue destination="7Vk-Py-R3s" kind="push" identifier="showGroupInfo" id="ktS-gX-UM8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cjk-dT-fmc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1062" y="-28"/>
+            <point key="canvasLocation" x="958" y="856"/>
+        </scene>
+        <!--Join Group View Controller-->
+        <scene sceneID="IQo-ms-8H5">
+            <objects>
+                <viewController id="zvz-Dz-2Xm" customClass="JoinGroupViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fDY-dy-x8y"/>
+                        <viewControllerLayoutGuide type="bottom" id="HmD-fs-HbB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="46Z-uq-FRn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter group name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z7F-47-ssz">
+                                <rect key="frame" x="20" y="102" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acL-jf-OBt">
+                                <rect key="frame" x="20" y="145" width="280" height="30"/>
+                                <color key="backgroundColor" red="0.30127729050000002" green="0.81259864270000004" blue="0.76147601899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Join">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addGroup:" destination="gzi-xi-kPr" eventType="touchUpInside" id="2d1-RK-ILQ"/>
+                                    <action selector="joinButton:" destination="zvz-Dz-2Xm" eventType="touchUpInside" id="441-XK-kDM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nIh-J8-IV9"/>
+                    <connections>
+                        <outlet property="groupNameLabel" destination="Z7F-47-ssz" id="JYc-WZ-jVv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VvK-UI-WJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="707" y="43"/>
         </scene>
         <!--Add Group-->
         <scene sceneID="77p-7U-maX">
@@ -141,7 +179,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdZ-Od-JKF">
-                                <rect key="frame" x="20" y="250" width="280" height="30"/>
+                                <rect key="frame" x="20" y="148" width="280" height="30"/>
                                 <color key="backgroundColor" red="0.30127729050000002" green="0.81259864270000004" blue="0.76147601899999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -160,7 +198,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSg-fV-pEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1411" y="-29"/>
+            <point key="canvasLocation" x="1062" y="43"/>
+        </scene>
+        <!--GroupInfoViewController-->
+        <scene sceneID="nft-Sv-K03">
+            <objects>
+                <viewController title="GroupInfoViewController" id="7Vk-Py-R3s" customClass="GroupInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G3c-Mj-kIw"/>
+                        <viewControllerLayoutGuide type="bottom" id="rY6-M6-A12"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rm8-UE-62T">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci2-hg-8sE">
+                                <rect key="frame" x="16" y="80" width="288" height="35"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group members:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3S-Ld-ogQ">
+                                <rect key="frame" x="16" y="113" width="288" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cHP-gu-HJy">
+                        <barButtonItem key="rightBarButtonItem" title="Delete Group" id="2yx-Wd-H9Q">
+                            <connections>
+                                <action selector="deleteButton:" destination="7Vk-Py-R3s" id="9Sm-8x-Hhp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="groupNameLabel" destination="ci2-hg-8sE" id="VO6-nV-dLi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="521-nD-r2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1319" y="856"/>
         </scene>
         <!--Divided-->
         <scene sceneID="nnz-zf-di8">
@@ -239,19 +319,73 @@
                             <outlet property="delegate" destination="O7L-UO-jA6" id="pAd-YJ-eQt"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Bills" id="bb2-Z0-Soh">
-                        <barButtonItem key="rightBarButtonItem" title="Add Bill" id="8ns-bR-BJT">
-                            <connections>
-                                <segue destination="lEf-le-lgm" kind="push" id="KtP-Vg-JHt"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Bills" id="bb2-Z0-Soh"/>
+                    <connections>
+                        <segue destination="YMj-dh-0or" kind="push" identifier="showBillInfo" id="pWL-aV-c9D"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n1g-ZR-cP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1062" y="642"/>
+            <point key="canvasLocation" x="958" y="1510"/>
         </scene>
-        <!--Edit Bills View Controller-->
+        <!--Bill Info View Controller-->
+        <scene sceneID="HLw-aW-UNv">
+            <objects>
+                <viewController id="YMj-dh-0or" customClass="BillInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TJo-Jc-3dV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qln-oY-rkG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8o7-mo-4Kg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTr-Tb-ip2">
+                                <rect key="frame" x="16" y="90" width="288" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUm-rf-WC7">
+                                <rect key="frame" x="16" y="133" width="288" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFX-7M-fKq">
+                                <rect key="frame" x="16" y="176" width="288" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Paid By" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pay-GK-FlV">
+                                <rect key="frame" x="16" y="219" width="288" height="47"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Each user owes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcr-86-PCY">
+                                <rect key="frame" x="16" y="274" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UdI-JY-PVA"/>
+                    <connections>
+                        <outlet property="billAmountLabel" destination="qFX-7M-fKq" id="8hR-Lr-tgA"/>
+                        <outlet property="billNameLabel" destination="cTr-Tb-ip2" id="nSy-aX-Jw6"/>
+                        <outlet property="billTypeLabel" destination="KUm-rf-WC7" id="6dQ-N0-6jc"/>
+                        <outlet property="paidByLabel" destination="pay-GK-FlV" id="8fM-Yd-web"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bZs-R2-eZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1319" y="1510"/>
+        </scene>
+        <!--Add Bill-->
         <scene sceneID="zvl-bv-5kB">
             <objects>
                 <viewController id="lEf-le-lgm" customClass="EditBillsViewController" sceneMemberID="viewController">
@@ -264,12 +398,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter bill name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DTu-3I-4ZY">
-                                <rect key="frame" x="20" y="113" width="280" height="30"/>
+                                <rect key="frame" x="20" y="94" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ueh-2O-f4C">
-                                <rect key="frame" x="20" y="195" width="280" height="30"/>
+                                <rect key="frame" x="20" y="300" width="280" height="30"/>
                                 <color key="backgroundColor" red="0.30127729050000002" green="0.81259864270000004" blue="0.76147601899999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -280,22 +414,40 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter bill amount" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AKR-TH-dF9">
-                                <rect key="frame" x="20" y="151" width="280" height="30"/>
+                                <rect key="frame" x="20" y="132" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter bill type" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvo-31-8om">
+                                <rect key="frame" x="20" y="170" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter group name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jPQ-Ln-CW0">
+                                <rect key="frame" x="20" y="246" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Who paid this?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YCN-pY-NuJ">
+                                <rect key="frame" x="20" y="208" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xyu-8h-ej9"/>
+                    <navigationItem key="navigationItem" title="Add Bill" id="xyu-8h-ej9"/>
                     <connections>
                         <outlet property="billAmountField" destination="AKR-TH-dF9" id="JGX-di-TQp"/>
                         <outlet property="billNameField" destination="DTu-3I-4ZY" id="qYT-G1-Ba9"/>
+                        <outlet property="billTypeField" destination="tvo-31-8om" id="ULa-Av-4oM"/>
+                        <outlet property="groupNameField" destination="jPQ-Ln-CW0" id="RHr-QI-Ubq"/>
+                        <outlet property="paidByField" destination="YCN-pY-NuJ" id="NKT-dL-qQS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pLw-fC-X1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1411" y="642"/>
+            <point key="canvasLocation" x="1418" y="43"/>
         </scene>
         <!--Divided-->
         <scene sceneID="lOi-gh-iBg">
@@ -308,6 +460,38 @@
                     <view key="view" contentMode="scaleToFill" id="5zn-v5-SE0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IqB-T0-GwU">
+                                <rect key="frame" x="20" y="206" width="280" height="30"/>
+                                <color key="backgroundColor" red="0.30127729050000002" green="0.81259864270000004" blue="0.76147601899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="+ Join Group">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="zvz-Dz-2Xm" kind="push" id="j8W-7e-kJL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWs-1K-Lm6">
+                                <rect key="frame" x="20" y="277" width="280" height="30"/>
+                                <color key="backgroundColor" red="0.30127729050000002" green="0.81259864270000004" blue="0.76147601899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="+ New Group">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gzi-xi-kPr" kind="push" id="AWT-OS-lje"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fW-vM-2F8">
+                                <rect key="frame" x="20" y="347" width="280" height="30"/>
+                                <color key="backgroundColor" red="0.30127729050000002" green="0.81259864270000004" blue="0.76147601899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="+ New Bill">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lEf-le-lgm" kind="push" id="pVE-lC-POw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Divided" id="EP0-Ni-6eP">
@@ -361,7 +545,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ifx-jP-pkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536" y="-28"/>
+            <point key="canvasLocation" x="548" y="856"/>
         </scene>
         <!--Bills-->
         <scene sceneID="c3v-Ky-1Q0">
@@ -380,7 +564,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsf-nr-eLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536" y="642"/>
+            <point key="canvasLocation" x="548" y="1510"/>
         </scene>
     </scenes>
     <resources>

@@ -30,8 +30,6 @@
 		C896832F1AB9F47E00E35FC6 /* Group-32.png in Resources */ = {isa = PBXBuildFile; fileRef = C896832C1AB9F47E00E35FC6 /* Group-32.png */; };
 		C89683301AB9F47E00E35FC6 /* Home-32.png in Resources */ = {isa = PBXBuildFile; fileRef = C896832D1AB9F47E00E35FC6 /* Home-32.png */; };
 		C89683331AB9F98D00E35FC6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C89683321AB9F98D00E35FC6 /* HomeViewController.m */; };
-		C89683351AB9FCA500E35FC6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89683341AB9FCA500E35FC6 /* Parse.framework */; };
-		C89683371AB9FCC800E35FC6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89683361AB9FCC800E35FC6 /* Bolts.framework */; };
 		C89683411AB9FD1F00E35FC6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89683381AB9FD1F00E35FC6 /* AudioToolbox.framework */; };
 		C89683421AB9FD1F00E35FC6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89683391AB9FD1F00E35FC6 /* CFNetwork.framework */; };
 		C89683431AB9FD1F00E35FC6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C896833A1AB9FD1F00E35FC6 /* CoreLocation.framework */; };
@@ -47,8 +45,13 @@
 		C89683531ABA006E00E35FC6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C89683521ABA006E00E35FC6 /* libsqlite3.dylib */; };
 		C89683591ABA18A100E35FC6 /* EditGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C89683581ABA18A100E35FC6 /* EditGroupsViewController.m */; };
 		C896835C1ABA37D700E35FC6 /* EditBillsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C896835B1ABA37D700E35FC6 /* EditBillsViewController.m */; };
+		C8C92C211AE87F1800F6CAEB /* UserInGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C92C201AE87F1800F6CAEB /* UserInGroup.m */; };
+		C8C92C241AE9050900F6CAEB /* JSONHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C92C231AE9050900F6CAEB /* JSONHandler.m */; };
 		C8FCCBE21ABA439F000F3E8C /* GroupsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FCCBE11ABA439F000F3E8C /* GroupsTableViewController.m */; };
 		C8FCCBE51ABA43B1000F3E8C /* BillsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FCCBE41ABA43B1000F3E8C /* BillsTableViewController.m */; };
+		C8FCD5D41AE543F0007B5370 /* GroupInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FCD5D31AE543F0007B5370 /* GroupInfoViewController.m */; };
+		C8FCD5D71AE595DD007B5370 /* BillInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FCD5D61AE595DD007B5370 /* BillInfoViewController.m */; };
+		C8FCD5DA1AE6F918007B5370 /* JoinGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FCD5D91AE6F918007B5370 /* JoinGroupViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,8 +98,6 @@
 		C896832D1AB9F47E00E35FC6 /* Home-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-32.png"; sourceTree = "<group>"; };
 		C89683311AB9F98D00E35FC6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		C89683321AB9F98D00E35FC6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		C89683341AB9FCA500E35FC6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		C89683361AB9FCC800E35FC6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		C89683381AB9FD1F00E35FC6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C89683391AB9FD1F00E35FC6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C896833A1AB9FD1F00E35FC6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -116,10 +117,20 @@
 		C89683581ABA18A100E35FC6 /* EditGroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditGroupsViewController.m; sourceTree = "<group>"; };
 		C896835A1ABA37D700E35FC6 /* EditBillsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditBillsViewController.h; sourceTree = "<group>"; };
 		C896835B1ABA37D700E35FC6 /* EditBillsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditBillsViewController.m; sourceTree = "<group>"; };
+		C8C92C1F1AE87F1800F6CAEB /* UserInGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInGroup.h; sourceTree = "<group>"; };
+		C8C92C201AE87F1800F6CAEB /* UserInGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInGroup.m; sourceTree = "<group>"; };
+		C8C92C221AE9050900F6CAEB /* JSONHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHandler.h; sourceTree = "<group>"; };
+		C8C92C231AE9050900F6CAEB /* JSONHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHandler.m; sourceTree = "<group>"; };
+		C8C92C251AE90B1B00F6CAEB /* GroupInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupInfoViewController.h; sourceTree = "<group>"; };
 		C8FCCBE01ABA439F000F3E8C /* GroupsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsTableViewController.h; sourceTree = "<group>"; };
 		C8FCCBE11ABA439F000F3E8C /* GroupsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsTableViewController.m; sourceTree = "<group>"; };
 		C8FCCBE31ABA43B1000F3E8C /* BillsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillsTableViewController.h; sourceTree = "<group>"; };
 		C8FCCBE41ABA43B1000F3E8C /* BillsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillsTableViewController.m; sourceTree = "<group>"; };
+		C8FCD5D31AE543F0007B5370 /* GroupInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupInfoViewController.m; path = ../GroupInfoViewController.m; sourceTree = "<group>"; };
+		C8FCD5D51AE595DD007B5370 /* BillInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillInfoViewController.h; sourceTree = "<group>"; };
+		C8FCD5D61AE595DD007B5370 /* BillInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillInfoViewController.m; sourceTree = "<group>"; };
+		C8FCD5D81AE6F918007B5370 /* JoinGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinGroupViewController.h; sourceTree = "<group>"; };
+		C8FCD5D91AE6F918007B5370 /* JoinGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinGroupViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,9 +150,7 @@
 				C89683481AB9FD1F00E35FC6 /* StoreKit.framework in Frameworks */,
 				C89683491AB9FD1F00E35FC6 /* SystemConfiguration.framework in Frameworks */,
 				C890E5BE1AB9EF5E00DB1F7F /* CoreGraphics.framework in Frameworks */,
-				C89683371AB9FCC800E35FC6 /* Bolts.framework in Frameworks */,
 				C890E5C01AB9EF5E00DB1F7F /* UIKit.framework in Frameworks */,
-				C89683351AB9FCA500E35FC6 /* Parse.framework in Frameworks */,
 				C890E5BC1AB9EF5E00DB1F7F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,8 +201,6 @@
 				C896833E1AB9FD1F00E35FC6 /* Security.framework */,
 				C896833F1AB9FD1F00E35FC6 /* StoreKit.framework */,
 				C89683401AB9FD1F00E35FC6 /* SystemConfiguration.framework */,
-				C89683361AB9FCC800E35FC6 /* Bolts.framework */,
-				C89683341AB9FCA500E35FC6 /* Parse.framework */,
 				C890E5BB1AB9EF5E00DB1F7F /* Foundation.framework */,
 				C890E5BD1AB9EF5E00DB1F7F /* CoreGraphics.framework */,
 				C890E5BF1AB9EF5E00DB1F7F /* UIKit.framework */,
@@ -211,6 +218,14 @@
 				C890E5CD1AB9EF5E00DB1F7F /* Images.xcassets */,
 				C890E5C21AB9EF5E00DB1F7F /* Supporting Files */,
 				C890E5EA1AB9EF8500DB1F7F /* MainStoryboard.storyboard */,
+				C8FCD5D51AE595DD007B5370 /* BillInfoViewController.h */,
+				C8FCD5D61AE595DD007B5370 /* BillInfoViewController.m */,
+				C8C92C1F1AE87F1800F6CAEB /* UserInGroup.h */,
+				C8C92C201AE87F1800F6CAEB /* UserInGroup.m */,
+				C8C92C221AE9050900F6CAEB /* JSONHandler.h */,
+				C8C92C231AE9050900F6CAEB /* JSONHandler.m */,
+				C8FCD5D31AE543F0007B5370 /* GroupInfoViewController.m */,
+				C8C92C251AE90B1B00F6CAEB /* GroupInfoViewController.h */,
 				C89683571ABA18A100E35FC6 /* EditGroupsViewController.h */,
 				C89683581ABA18A100E35FC6 /* EditGroupsViewController.m */,
 				C896835A1ABA37D700E35FC6 /* EditBillsViewController.h */,
@@ -235,6 +250,8 @@
 				C896834E1AB9FE6600E35FC6 /* SignupViewController.m */,
 				C89683311AB9F98D00E35FC6 /* HomeViewController.h */,
 				C89683321AB9F98D00E35FC6 /* HomeViewController.m */,
+				C8FCD5D81AE6F918007B5370 /* JoinGroupViewController.h */,
+				C8FCD5D91AE6F918007B5370 /* JoinGroupViewController.m */,
 			);
 			path = Divided;
 			sourceTree = "<group>";
@@ -380,7 +397,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C88C41441AD82E5000A123F0 /* Bill.m in Sources */,
+				C8FCD5D71AE595DD007B5370 /* BillInfoViewController.m in Sources */,
 				C80D16801ABB4662000C4830 /* Group.m in Sources */,
+				C8FCD5DA1AE6F918007B5370 /* JoinGroupViewController.m in Sources */,
 				C80D167A1ABB4593000C4830 /* HomeModel.m in Sources */,
 				C896834C1AB9FE5400E35FC6 /* LoginViewController.m in Sources */,
 				C896835C1ABA37D700E35FC6 /* EditBillsViewController.m in Sources */,
@@ -388,11 +407,14 @@
 				C8FCCBE51ABA43B1000F3E8C /* BillsTableViewController.m in Sources */,
 				C88C41411AD82DCD00A123F0 /* BillModel.m in Sources */,
 				C88C41471AD8688100A123F0 /* User.m in Sources */,
+				C8FCD5D41AE543F0007B5370 /* GroupInfoViewController.m in Sources */,
+				C8C92C241AE9050900F6CAEB /* JSONHandler.m in Sources */,
 				C890E5C81AB9EF5E00DB1F7F /* main.m in Sources */,
 				C89683331AB9F98D00E35FC6 /* HomeViewController.m in Sources */,
 				C8FCCBE21ABA439F000F3E8C /* GroupsTableViewController.m in Sources */,
 				C89683591ABA18A100E35FC6 /* EditGroupsViewController.m in Sources */,
 				C896834F1AB9FE6600E35FC6 /* SignupViewController.m in Sources */,
+				C8C92C211AE87F1800F6CAEB /* UserInGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,7 +2,6 @@
 //  HomeModel.m
 //  Divided
 //
-//  Created by Jo on 19/03/2015.
 //  Copyright (c) 2015 Jo. All rights reserved.
 //
 
@@ -22,11 +21,31 @@
 
 - (void)downloadItems
 {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    [prefs synchronize];
+    
+    NSString *username = [prefs stringForKey:@"userDefault"];
+    
     // Download the json file
     NSURL *jsonFileUrl = [NSURL URLWithString:@"http://localhost:8888/getgroups.php"];
     
     // Create the request
-    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
+   // NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[jsonFileUrl standardizedURL]];
+
+    
+    //set http method
+    [urlRequest setHTTPMethod:@"POST"];
+    //initialize a post data
+    NSString *post = [NSString stringWithFormat:@"username=%@",username];
+    //set request content type we MUST set this value.
+    
+    [urlRequest setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    //set post data of request
+    [urlRequest setHTTPBody:[post dataUsingEncoding:NSUTF8StringEncoding]];
+
     
     // Create the NSURLConnection
     [NSURLConnection connectionWithRequest:urlRequest delegate:self];
@@ -55,18 +74,18 @@
     NSError *error;
     NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:_downloadedData options:NSJSONReadingAllowFragments error:&error];
     
-    // Loop through Json objects, create question objects and add them to our questions array
+    // Loop through Json objects, create group objects and add them to our groups array
     for (int i = 0; i < jsonArray.count; i++)
     {
         NSDictionary *jsonElement = jsonArray[i];
         
-        // Create a new group object and set its props to JsonElement properties
+        // Create a new group object and set its properties to JsonElement properties
         Group *newGroup = [[Group alloc] init];
-        newGroup.groupID = jsonElement[@"groupID"];
+        newGroup.username = jsonElement[@"username"];
         newGroup.groupName = jsonElement[@"groupName"];
 
         
-        // Add this question to the groups array
+        // Add this group to the groups array
         [_groups addObject:newGroup];
     }
     

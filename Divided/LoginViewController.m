@@ -2,7 +2,6 @@
 //  LoginViewController.m
 //  Divided
 //
-//  Created by Jo on 18/03/2015.
 //  Copyright (c) 2015 Jo. All rights reserved.
 //
 
@@ -59,9 +58,11 @@
         
         //set http method
         [request setHTTPMethod:@"POST"];
+       
         //initialize a post data
         NSString *post = [NSString stringWithFormat:@"username=%@&password=%@",username,password];
-        //set request content type we MUST set this value.
+        
+        //set request content type
         
         [request setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
         

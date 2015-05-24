@@ -2,7 +2,6 @@
 //  HomeViewController.h
 //  Divided
 //
-//  Created by Jo on 18/03/2015.
 //  Copyright (c) 2015 Jo. All rights reserved.
 //
 
@@ -10,6 +9,8 @@
 
 @interface HomeViewController : UIViewController
 - (IBAction)logout:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *welcomeUser;
+@property (retain, nonatomic) NSURLConnection *connection;
+@property (retain, nonatomic) NSMutableData *receivedData;
+
 
 @end

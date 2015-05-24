@@ -2,7 +2,6 @@
 //  User.h
 //  Divided
 //
-//  Created by Jo on 10/04/2015.
 //  Copyright (c) 2015 Jo. All rights reserved.
 //
 

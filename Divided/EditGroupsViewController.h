@@ -2,7 +2,6 @@
 //  EditGroupsViewController.h
 //  Divided
 //
-//  Created by Jo on 18/03/2015.
 //  Copyright (c) 2015 Jo. All rights reserved.
 //
 
@@ -10,6 +9,8 @@
 
 @interface EditGroupsViewController : UIViewController
 
+@property (retain, nonatomic) NSURLConnection *connection;
+@property (retain, nonatomic) NSMutableData *receivedData;
 @property (weak, nonatomic) IBOutlet UITextField *groupName;
 
 - (IBAction)addGroup:(id)sender;

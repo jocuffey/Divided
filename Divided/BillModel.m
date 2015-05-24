@@ -2,7 +2,6 @@
 //  BillModel.m
 //  Divided
 //
-//  Created by Jo on 10/04/2015.
 //  Copyright (c) 2015 Jo. All rights reserved.
 //
 
@@ -22,11 +21,30 @@
 
 - (void)downloadItems
 {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    [prefs synchronize];
+    
+    NSString *username = [prefs stringForKey:@"userDefault"];
+    
     // Download the json file
     NSURL *jsonFileUrl = [NSURL URLWithString:@"http://localhost:8888/getbills.php"];
     
     // Create the request
-    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
+    //NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[jsonFileUrl standardizedURL]];
+    
+    //set http method
+    [urlRequest setHTTPMethod:@"POST"];
+    //initialize a post data
+    NSString *post = [NSString stringWithFormat:@"username=%@",username];
+    //set request content type we MUST set this value.
+    
+    [urlRequest setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    //set post data of request
+    [urlRequest setHTTPBody:[post dataUsingEncoding:NSUTF8StringEncoding]];
+
     
     // Create the NSURLConnection
     [NSURLConnection connectionWithRequest:urlRequest delegate:self];
@@ -64,6 +82,10 @@
         Bill *newBill = [[Bill alloc] init];
         newBill.billID = jsonElement[@"billID"];
         newBill.billName = jsonElement[@"billName"];
+        newBill.billType = jsonElement[@"billType"];
+        newBill.billAmount = jsonElement[@"billAmount"];
+        newBill.paidBy = jsonElement[@"paidBy"];
+        newBill.groupName = jsonElement[@"groupName"];
         
         
         // Add this question to the groups array

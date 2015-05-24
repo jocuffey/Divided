@@ -2,26 +2,33 @@
 //  BillsTableViewController.m
 //  Divided
 //
-//  Created by Jo on 18/03/2015.
 //  Copyright (c) 2015 Jo. All rights reserved.
 //
 
 #import "BillsTableViewController.h"
 #import "Bill.h"
+#import "BillInfoViewController.h"
 
 @interface BillsTableViewController ()
 {
     BillModel *_billModel;
     NSArray *_feedItems;
+    Bill *_selectedBill;
+
 }
+
 @end
 
 @implementation BillsTableViewController
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+}
+
+-(void) viewWillAppear:(BOOL)animated{
     
     // Set this view controller object as the delegate and data source for the table view
     self.tableView.delegate = self;
@@ -69,13 +76,35 @@
     NSString *cellIdentifier = @"BasicCell";
     UITableViewCell *myCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    // Get the location to be shown
+    // Get the bill to be shown
     Bill *item = _feedItems[indexPath.row];
     
     // Get references to labels of cell
     myCell.textLabel.text = item.billName;
     
     return myCell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Set selected bill to var
+    _selectedBill = _feedItems[indexPath.row];
+    
+    // Manually call segue to detail view controller
+    [self performSegueWithIdentifier:@"showBillInfo" sender:self];
+}
+
+
+#pragma mark Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get reference to the destination view controller
+     BillInfoViewController *billInfoVC = segue.destinationViewController;
+    
+    // Set the property to the selected bill so when the view for
+    // detail view controller loads, it can access that property to get the feeditem object
+    billInfoVC.selectedBill = _selectedBill;
 }
 
 @end

@@ -2,7 +2,6 @@
 //  SignupViewController.m
 //  Divided
 //
-//  Created by Jo on 18/03/2015.
 //  Copyright (c) 2015 Jo. All rights reserved.
 //
 
@@ -44,11 +43,7 @@
         return;
     }
     
-        
-    
-
-    
-    if ([username length] == 0 || [password length] == 0 || [email length] == 0) {
+        if ([username length] == 0 || [password length] == 0 || [email length] == 0) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"All fields must be completed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         
         [alertView show];
@@ -65,10 +60,7 @@
         
         NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
         
-        NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
-        
-        
-        
+        NSString *postLength = [NSString stringWithFormat:@"%lu",[postData length]];
         
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         [request setHTTPMethod:@"POST"];
