@@ -73,6 +73,8 @@
         //start the connection
         [connection start];
     }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
     
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{

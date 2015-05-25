@@ -37,13 +37,13 @@
     // Create array object and assign it to _feedItems variable
     _feedItems = [[NSArray alloc] init];
     
-    // Create new HomeModel object and assign it to _homeModel variable
+    // Create new HomeModel object and assign it to _billModel variable
     _billModel = [[BillModel alloc] init];
     
     // Set this view controller object as the delegate for the home model object
     _billModel.delegate = self;
     
-    // Call the download items method of the home model object
+    // Call the download items method of the bill model object
     [_billModel downloadItems];
     
     

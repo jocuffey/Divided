@@ -69,7 +69,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="bqf-jw-ss6" kind="push" id="eaZ-u6-PB4"/>
+                                    <segue destination="bqf-jw-ss6" kind="push" identifier="" id="eaZ-u6-PB4"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="divided.png" translatesAutoresizingMaskIntoConstraints="NO" id="jKX-PP-pXy">
@@ -364,8 +364,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Each user owes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcr-86-PCY">
-                                <rect key="frame" x="16" y="274" width="122" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Each user owes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcr-86-PCY">
+                                <rect key="frame" x="16" y="274" width="130" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxd-hy-iTH">
+                                <rect key="frame" x="146" y="274" width="136" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -373,12 +379,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UdI-JY-PVA"/>
+                    <navigationItem key="navigationItem" id="UdI-JY-PVA">
+                        <barButtonItem key="rightBarButtonItem" title="Delete Bill" id="bvO-ME-FEh">
+                            <connections>
+                                <action selector="deleteButton:" destination="YMj-dh-0or" id="h6x-0A-8NO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billAmountLabel" destination="qFX-7M-fKq" id="8hR-Lr-tgA"/>
                         <outlet property="billNameLabel" destination="cTr-Tb-ip2" id="nSy-aX-Jw6"/>
                         <outlet property="billTypeLabel" destination="KUm-rf-WC7" id="6dQ-N0-6jc"/>
                         <outlet property="paidByLabel" destination="pay-GK-FlV" id="8fM-Yd-web"/>
+                        <outlet property="splitLabel" destination="Oxd-hy-iTH" id="VgE-hy-Day"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZs-R2-eZA" userLabel="First Responder" sceneMemberID="firstResponder"/>

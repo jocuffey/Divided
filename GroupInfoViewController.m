@@ -9,6 +9,7 @@
 #import "Group.h"
 #import "UserInGroup.h"
 
+
 @interface GroupInfoViewController ()
 {
     Group *_selectedGroup;
@@ -97,6 +98,8 @@
     
     //start the connection
     [connection start];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
@@ -141,6 +144,7 @@
         [[self view] addSubview:myLabel];
         [_arrayLabels addObject:myLabel];
         y=y+30;
+        NSLog(@"count = %d", [_arrayLabels count]);
 
     }
     

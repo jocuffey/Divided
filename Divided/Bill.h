@@ -16,5 +16,6 @@
 @property (nonatomic, strong) NSString *billType;
 @property (nonatomic, strong) NSString *paidBy;
 @property (nonatomic, strong) NSString *groupName;
+@property (nonatomic, strong) NSDecimalNumber *numberUsers;
 
 @end
